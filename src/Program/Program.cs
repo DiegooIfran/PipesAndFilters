@@ -17,6 +17,13 @@ namespace CompAndDel
 
             IPicture result = pipeSerial1.Send(picture);
             provider.SavePicture(result, @"luke1.jpg");
+            
+            PictureProvider providerPan = new PictureProvider();
+            IPicture picturePan = providerPan.GetPicture(@"pan.jpg");
+            
+            IPicture resultPan = pipeSerial1.Send(picturePan);
+            providerPan.SavePicture(resultPan, @"pan1.jpg");
+            
         }
     }
 }
